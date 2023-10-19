@@ -1,0 +1,19 @@
+def cat_hat_puzzle(num_cats):
+    cat_with_hats = set()
+
+    for round in range (1,num_cats + 1):
+        for cat in range(round, num_cats + 1, round):
+            if cat in cat_with_hats:
+                cat_with_hats.remove(cat)
+            else:
+                cats_with_hats.add(cat)
+
+        
+        cats_without_hats = set(range(1, num_cats + 1)).difference(cats_with_hats)
+
+        return cats_without_hats
+
+    num_cats = 100
+    cats_without_hats = cat_hat_puzzle(num_cats)
+
+    print("Cats without hats:", sorted(cats_without_hats))  
